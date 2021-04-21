@@ -1,9 +1,6 @@
 # Sheetsee Calendar
 
-A fork-n-go Sheetsee.js calendar project! Made by me and [@muan](http://www.github.com/muan), we finally worked on something together! :tada:
-
-
-![ss-cal](ss-cal.png)
+A fork-n-go Sheetsee.js calendar project! 
 
 **Sheetsee.js Calendar**
 
