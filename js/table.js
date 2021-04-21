@@ -1,5 +1,6 @@
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
 var weekdays   = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+weekdays = ["सोमवासरः", "मङ्गलवासरः", "बुधवासरः", "गुरुवासरः", "शुक्रवासरः", "शनिवासरः", "रविवासरः"]
 var today  = new Date()
 var months = []
 
@@ -122,7 +123,7 @@ function generateMonthTable( date ) {
     var thisDay = new Date(date.getFullYear(), date.getMonth(), (daynumber + 1))
     var id = formattedDate(thisDay)
     var pastClass = endOfToday > thisDay ? "past" : ""
-    getFirstAvailableRow(monthTableBody).append('<td class="no-event ' + pastClass + '" id=' + id + '><div class=day>'+ (daynumber + 1) +'</div></td>')
+    getFirstAvailableRow(monthTableBody).append('<td class="no-event ' + pastClass + '" id=' + id + '><div class=day>'+ Sanscript.t((daynumber + 1), 'itrans', 'devanagari') +'</div></td>')
   })
 
   // Add empty days from next month
