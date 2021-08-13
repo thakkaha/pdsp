@@ -22,10 +22,9 @@
 <meta name="twitter:image" content="">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	
-    <script type="text/javascript" src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+    <script type="text/javascript" src="js/tabletop1.3.4.js"></script>
     <script type="text/javascript" src='js/sheetsee.js'></script>
-    <script type="text/javascript" src='js/table3.js'></script>
+    <script type="text/javascript" src='js/table.js'></script>
     <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Bonus NodeSchool stylesheet option! -->
@@ -41,13 +40,9 @@
   </body>
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-      var URL = "1G9o_2WF9TlCkh3CzdmQLGLdj3Q-erwaXrlPVTHo28WQ";
-	  var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkvfMFZc36KaFm_yvcAq4ThJcy7Y1Qzkjg_wmJxeU9zRM8XZYnQlGhJr4GlFDI3Z0B9vRCw6Ek_w8v/pub?gid=0&single=true&output=csv";
-	  Papa.parse(lnk, {
-          download: true,
-          header: true,
-          complete: generateCalendar
-		  })
+      //https://docs.google.com/spreadsheets/d/e/2PACX-1vQkvfMFZc36KaFm_yvcAq4ThJcy7Y1Qzkjg_wmJxeU9zRM8XZYnQlGhJr4GlFDI3Z0B9vRCw6Ek_w8v/pubhtml
+      var URL = "1G9o_2WF9TlCkh3CzdmQLGLdj3Q-erwaXrlPVTHo28WQ"
+      Tabletop.init( { key: URL, callback: generateCalendar, simpleSheet: true } )
     })
   </script>
 </html>
