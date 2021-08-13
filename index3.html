@@ -41,11 +41,9 @@
   </body>
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-      //https://docs.google.com/spreadsheets/d/e/2PACX-1vQkvfMFZc36KaFm_yvcAq4ThJcy7Y1Qzkjg_wmJxeU9zRM8XZYnQlGhJr4GlFDI3Z0B9vRCw6Ek_w8v/pubhtml
       var URL = "1G9o_2WF9TlCkh3CzdmQLGLdj3Q-erwaXrlPVTHo28WQ";
 	  var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkvfMFZc36KaFm_yvcAq4ThJcy7Y1Qzkjg_wmJxeU9zRM8XZYnQlGhJr4GlFDI3Z0B9vRCw6Ek_w8v/pubhtml?gid=0&single=true&output=csv";
-      //Tabletop.init( { key: lnk, callback: generateCalendar, simpleSheet: true } )
-	  Papa.parse(URL, {
+	  Papa.parse(lnk, {
           download: true,
           header: true,
           complete: generateCalendar
