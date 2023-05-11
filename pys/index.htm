@@ -75,7 +75,7 @@ audio{
 			<figcaption id="illus"></figcaption>
 			</figure>
 			<br>
-			<h2 class="title" style="text-align: center;">पातञ्जलयोगसूत्राणि </h2>
+			<h2 class="title" style="text-align: center;"></h2>
         </div>
     </div>
 </div>
@@ -103,7 +103,7 @@ audio{
 	<!-- Javascript calls ––– -->
 
 <script>
-debugger;
+//debugger;
 var curtrk=0;
 var mytrkevt = function(event) {
   for (i=0;i<event.target.length;i++)
@@ -116,7 +116,7 @@ var mytrkevt = function(event) {
 	 textTrack.oncuechange = function(e) {
   var cue = this.activeCues[0];
   if(cue){
-    lyrics.innerHTML = cue.text;
+    lyrics.innerHTML += cue.text + "&nbsp;";
   }
   }
 };
