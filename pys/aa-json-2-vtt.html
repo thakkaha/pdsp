@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+function convertStoMs(seconds) {
+         let minutes = Math.floor(seconds / 60);
+         let extraSeconds = seconds % 60;
+         minutes = minutes < 10 ? "0" + minutes : minutes;
+         extraSeconds = extraSeconds< 10 ? "0" + extraSeconds : extraSeconds;
+         return "00:"+minutes + ":" + extraSeconds;
+      }
+var inp=prompt("JSON file? enter number between 1 & 4");
+var myvtt="";
+</script>
+</head>
+<body>loading..
+</body>
+<script>
+jQuery.get("pys"+inp+".json", function(data) {
+    myvtt =data;
+	document.getElementsByTagName("body")[0].innerHTML ="";
+  for (i=0;i<myvtt.fragments.length;i++)
+    { document.getElementsByTagName("body")[0].innerHTML += "<br>"+convertStoMs(myvtt.fragments[i].begin.split(".")[0]) + "." + myvtt.fragments[i].begin.split(".")[1] + " --> " + convertStoMs(myvtt.fragments[i].end.split(".")[0]) + "." + myvtt.fragments[i].end.split(".")[1] + "<br>" + myvtt.fragments[i].lines}
+});
+</script>
+</html>
