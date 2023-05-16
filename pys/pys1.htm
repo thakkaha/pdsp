@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="description" content="pys पातञ्जलयोगसूत्राणि "/>
+    <meta property="og:title" content="पातञ्जलयोगसूत्राणि  ?" />
+    <meta property="og:url" content="pdsp.ml/pys" />
+    <meta property="og:description" content="पातञ्जलयोगसूत्राणि " />
+	<meta property="og:type" content="website" />
+    <meta name="keywords"
+    content="sanskrit language, sanskrit education, learn sanskrit, spoken sanskrit, sanskrit introduction, sanskrit lyrics, sanskrit music project, sanskrit songs, sanskrit translation, sanskrit essays, sanskrit website, गर्दभस्य पूजा ?" />
+    <!-- Basic Page Needs ––– -->
+    <meta charset="utf-8">
+    <title>पातञ्जलयोगसूत्राणि</title>    
+    <style type="text/css">
+.bm { color: green;font-weight: bold; }
+.mainpage .full-width-card h3.author.by:before{
+ content: '— ';
+ margin-right: 2px;
+ margin-left: 20px;
+}
+.mainpage .full-width-card h3.author span:not(:first-of-type):last-of-type:before{
+ content: ' ,  ';
+}
+.mainpage .full-width-card h3.fullText span:not(:first-of-type):last-of-type:before{
+ content: ' ,  ';
+}
+#lyrics{margin-left:3em;font: 700 2.3em arial,sans-serif;text-align:center;}
+audio{
+  width:100%;
+  margin: 0 auto;
+  display: table;
+}
+</style>
+</head>
+<body>
+<div class="container dynamic-page">
+<p><small>© SBUSA.org, All Rights Reserved</small></p>
+    <div class="row">
+	<audio id="player" controls preload="auto">
+  <source src="maj1.mp3" type="audio/mpeg">
+  <track id="trk" kind="subtitles" label="देवनागरी (Samskritam/Hindi/Marathi)" src="pys1.vtt" srclang="sa" default></track>
+  Your browser does not support the audio tag.
+</audio>
+        <div class="col-md-12" align="center">
+			<figure class="image-wrap">
+			<figcaption id="illus"></figcaption>
+			</figure>
+			<br>
+			<h2 class="title" style="text-align: center;"></h2>
+        </div>
+    </div>
+</div>
+<script>
+var curtrk=0;
+var mytrkevt = function(event) {
+  for (i=0;i<event.target.length;i++)
+   if (event.target[i].mode == "showing")
+    {
+     curtrk = i;
+	 break;
+	 }
+	 textTrack = myAudio.textTracks[curtrk];
+	 textTrack.oncuechange = function(e) {
+  var cue = this.activeCues[0];
+  if(cue){
+    lyrics.innerHTML += cue.text + "&nbsp;";
+  }
+  }
+};
+	var myAudio = document.getElementById('player');
+	myAudio.textTracks.onchange = mytrkevt;
+var textTrack = myAudio.textTracks[curtrk];
+var lyrics = document.getElementsByClassName("title")[0];
+// When cue value changes run your code
+textTrack.oncuechange = function(e) {
+  var cue = this.activeCues[0];
+  if(cue){
+    lyrics.innerHTML = cue.text;
+  }
+}
+</script>
+</body>
+</html>
