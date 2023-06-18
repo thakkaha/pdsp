@@ -15,7 +15,10 @@ mydata = mydata.sort(function(a, b) { return (new Date(a.startdate)) - (new Date
 
   // Highlight today
   $('#' + formattedDate(today)).removeClass('no-event').addClass('today')
-  addMonthMenu()
+  addMonthMenu();
+  //hht-reduc-no-event-height
+  $(".no-event").css("height","5%");
+  $(".empty").css("height","5%");
 }
 
 function addMonthMenu() {
@@ -44,7 +47,7 @@ function addMonthMenu() {
 function appendEvent( event ) {
   var eventStartDate = new Date(event.startdate)
   var eventEndDate   = new Date(event.enddate)
-  var eventElement   = $('<div class="event"><a target="_blank" href="' + event.tickets + event.name + '">' + event.name + " - " + event.time + '</a></div>')
+  var eventElement   = $('<div class="event"><a target="_blank" href="' + event.tickets + event.name + '.html">' + event.name + " - " + event.time + '</a></div>')
 
   // Handle multi-days
   if ( eventEndDate.getDate() ) {
